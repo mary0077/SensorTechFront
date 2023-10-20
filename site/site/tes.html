@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+        <h2>Cidade</h2>
+                    <div class="form_group">
+                      <section>
+                        <form id="country-form">
+                            <label for="country-select">País:</label>
+                            <select id="country-select">
+                                <option value="selecione">Selecione um país</option>
+                                <option value="brasil">Brasil</option>
+                                <option value="eua">Estados Unidos</option>
+                                <option value="canada">Canadá</option>
+                                <!-- Adicione mais países aqui -->
+                            </select>
+                    </div>
+        <form id="country-form">
+            <label for="country-select">País:</label>
+            <select id="country-select">
+                <option value="selecione">Selecione um país</option>
+                <option value="brasil">Brasil</option>
+                <option value="eua">Estados Unidos</option>
+                <option value="canada">Canadá</option>
+                <!-- Adicione mais países aqui -->
+            </select>
+
+            <label for="ddi-select">DDI:</label>
+            <select id="ddi-select" disabled>
+                <option value="selecione">Selecione um DDI</option>
+                <!-- Os DDI correspondentes serão preenchidos aqui usando JavaScript -->
+            </select>
+        </form>
+
+
+    <script>
+        // Mapeamento de DDI para países
+        const ddiPorPais = {
+            brasil: ['55'],
+            eua: ['1'],
+            canada: ['1'],
+            // Adicione mais mapeamentos de países e DDI aqui
+        };
+
+        const countrySelect = document.getElementById('country-select');
+        const ddiSelect = document.getElementById('ddi-select');
+
+        // Event listener para o menu suspenso de países
+        countrySelect.addEventListener('change', function() {
+            const selectedCountry = this.value;
+            const ddis = ddiPorPais[selectedCountry];
+
+            // Limpa o menu suspenso de DDI
+            ddiSelect.innerHTML = '<option value="selecione">Selecione um DDI</option>';
+
+            if (ddis) {
+                // Preenche o menu suspenso de DDI com as opções correspondentes
+                ddis.forEach(ddi => {
+                    const option = document.createElement('option');
+                    option.value = ddi;
+                    option.text = ddi;
+                    ddiSelect.appendChild(option);
+                });
+
+                // Habilita o menu suspenso de DDI
+                ddiSelect.removeAttribute('disabled');
+            } else {
+                // Desabilita o menu suspenso de DDI se nenhum DDI estiver disponível
+                ddiSelect.setAttribute('disabled', true);
+            }
+        });
+    </script>
+</body>
+</html>
+
+// pode sr colocado ao lado das imagens da equipe
+<div class="card-equipe-titulo-col2"> nome da equipe <br/> Função da empresa </div>
+
+<div class="contato_group-content"></div>
+<form action="#" class="form">
+
+    <h2>Nome</h2>
+    <div class="form_group">
+        <input type="text" class="form_input" placeholder="" id="nome" name="nome">
+        <label for="nome" class="form_label"> </label>
+    </div>
+
+    <h2>Cargo</h2>
+    <div class="form_group">
+        <input type="text" class="form_input" placeholder="" id="cargo" name="cargo">
+        <label for="cargo" class="form_label"></label>
+    </div>
+
+    <h2>Departamento</h2>
+    <div class="form_group">
+        <input type="text" class="form_input" placeholder="" id="departamento" name="departamento">
+        <label for="nome" class="form_label"></label>
+    </div>
+
+    <h2>Nome da empresa</h2>
+    <div class="form_group">
+        <input type="text"class="form_input" id="empresa" name="empresa">
+        <label for="nome" class="form_label"></label>
+    </div>
+
+    <h2>Cidade</h2>
+    <div class="form_group">
+        <input type="text" class="form_input" id="Cidade" name="cidade">
+        <label for="name" class="form_label"></label>
+    </div>
+
+    <h2>País</h2>
+    <div class="form_group">
+      <section>
+        <select type="text" class="form_input" id="country-form" name="País">
+                <option value="selecione">Selecione um país</option>
+                <option value="brasil">Brasil</option>
+                <option value="eua">Estados Unidos</option>
+                <option value="canada">Canadá</option>
+                <!-- Adicione mais países aqui -->
+            </select>
+    </div>
+
+    <h2>Data de Agendamento</h2>
+    <div class="form_group">
+        <input type="datetime-local" class="form_input" placeholder="" id="Data" name="Data"> 
+        <label for="nome" class="form_label"></label>
+    </div>
+    <h2>E-mail</h2>
+    <div class="form_group">
+        <input type="email" class="form_input" placeholder="" id="email" name="email">
+        <label for="email" class="form_label">  </label>
+    </div>
+    <h2>Assunto</h2>
+    <div class="form_group">
+        <input type="text" class="form_input" placeholder="" id="assunto" name="assunto">
+        <label for="assunto" class="form_label">  </label>
+    </div>
+    <h2>Descrição</h2>
+    <div class="form_group">
+        <textarea class="form_input form_textarea" placeholder="" id="descricao" name="descricao"></textarea>
+        <label for="descricao" class="form_label"> Descrição </label>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Leia e aceite os <a href=""> termos de uso</a> e a política de privacidade.</label>
+      </div>
+
+    <div class="form_btn">
+        <button type="submit"  class="btn--orange btn--square"> Enviar </button>
+    </div>
+
+</form>
+
+
+<script>
+    Video({ video }) {
+       return (
+         <div>
+           <Thumbnail video={video} />
+           <a href="https://www.youtube.com/watch?v=yqozYXnsnRU">
+             <h3>Sensor MQ-2</h3>
+             <p>Este sensor de gás inflamável e fumaça MQ-2 é capaz de detectar concentrações de gases combustíveis e fumaça no ar. Um módulo confiável e simples de usar em seus projetos de automação residencial. Quando a concentração de gases fica acima do nível ajustado pelo potenciômetro, a saída digital D0 fica em estado alto, se abaixo do nível, fica em estado baixo. Uma ótima opção para acionar um microcontrolador ou relés. Para ter uma resolução melhor e medir a variação da concentração dos gases no ar é possível usar a saída analógica A0 e conectar a um conversor AD, como a presente no Arduino e Raspberry Pi por exemplo. Este sensor de gás não foi desenvolvido para aplicações que envolvam segurança humana ou patrimonial e é destinado apenas a propósitos experimentais. A Eletrogate não se responsabiliza por qualquer dano gerado em virtude de sua utilização.</p>
+           </a>
+           <LikeButton video={video} />
+         </div>
+       );
+     }</script>
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=yqozYXnsnRU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<div class="imagem_banner_container">
+                
+    <picture class="imagem_banner imagem_banner--1">
+        <img src="imagens/sensor mq2.png" class="imagem_banner--adjust">
+    </picture>
+    
+    <picture class="imagem_banner imagem_banner--2">
+        <img src="imagens/sensor mq3.png" class="imagem_banner--adjust">
+    </picture>
+
+    <picture class="imagem_banner imagem_banner--3">
+        <img src="imagens/sensor mq 135.png" class="imagem_banner--adjust">
+    </picture>
+
+</div>
+//mq2
+<p>
+    Gás Metano Butano Glp Fumaça
+    Este sensor de gás possibilita criar dispositivos para monitorar gases no ambiente, como gás de petróleo liquefeito, butano, propano, e tem uma sensibilidade mais baixa para detectar também metano, etanol, e pode detectar outros tipos de gases. Possui duas saídas, uma analógica que retorna o nível do gás no ambiente e outra digital que indica a presença de gás. Especificações:
+    
+</p>
+<ul>Especificações:</ul>
+<ul>-Dimensões do produto: 32mm x 20mm x 15mm (L x W x H).</ul>
+<ul>-Chip: LM393, ZYMQ-2 sensores de gás.</ul>
+<ul>-Tensão de funcionamento: DC 5V.</ul>
+<ul>-Detecção de gás: gases combustíveis, fumos.</ul>
+<ul>-Concentração detectável: 300-10000ppm (gás inflamável).</ul>
+<ul>-Tensão de entrada: DC5V.</ul>
+<ul>Consumo de energia (atual): 150mA.</ul>
+<ul>-DO Saída: TTL digital 0 e 1 (0,1 e 5V).</ul>
+<ul>-AO: 0,1 - 0,3 V (em relação à poluição), a concentração máxima de uma tensão de cerca de 4V.</ul>
+
+//mq3
+<p>
+    O Sensor de Gás MQ3 é um sensor capaz de detectar vapores derivados do Álcool / Etanol que se comunica de forma simples e fácil em diversos microcontroladores, muito utilizado em projetos de segurança e bafômetro.
+</p>
+<ul>Especificações:</ul>
+<ul>-Detecção de gases como Álcool e Etanol;</ul>
+<ul>-Concentração de detecção: 10-10.000ppm;</ul>
+<ul>-Tensão de operação: 3-5V;</ul>
+<ul>-Tempo de resposta: 10s;</ul>
+<ul>-Resistência de aquecimento: 31O ± 3O;</ul>
+<ul>-Tensão de aquecimento: 5V ± 0,2V;</ul>
+<ul>-Potência de aquecimento: 900mW;</ul>
+<ul>-Sensibilidade ajustável via potenciômetro;</ul>
+<ul>-Saída Digital e Analógica;</ul>
+<ul>-Fácil instalação;</ul>
+<ul>- Comparador LM393;</ul>
+<ul>-Dimensões: 32 x 20 x 15mm.</ul>
+
+//mq135
+<p>
+    O SENSOR DE GÁS MQ-135 / DETECTOR DE GÁS é um dispositivo de segurança utilizado principalmente no desenvolvimento de projetos eletrônicos, possuindo alta sensibilidade para detecção de Amônia, Óxido Nítrico, Álcool, Benzeno, Dióxido de Carbono e Fumaça, isso, desde que trabalhe em conjunto com plataformas de prototipagem, como, por exemplo o Arduino.- A aplicação do DETECTOR DE GÁS / SENSOR DE GÁS AMÔNIA, ÓXIDO NÍTRICO, ÁLCOOL, BENZENO, DIÓXIDO DE CARBONO E FUMAÇA MQ-135 dá-se em sistemas residenciais e industriais de alarmes controlados por plataformas microcontroladoras, onde é possível por meio deste sensor oferecer maior segurança a sua residência, familiares e ambiente de trabalho.- O SENSOR DE GÁS MQ-135 possui alta capacidade de detectar a concentração de Amônia, Óxido Nítrico, Álcool, Benzeno, Dióxido de Carbono e Fumaça em determinado ambiente, já que a maioria desses gases são extremamente tóxicos para o ser humano.- Quando o DETECTOR DE GÁS Amônia, Óxido Nítrico, Álcool, Benzeno, Dióxido de Carbono e Fumaça MQ-135 detectar a presença ou mesmo a concentração dos gases mencionados, ele enviará os sinais para o Arduino que, se programado, poderá realizar diferentes tarefas, como por exemplo, liberar trancas de portas, emitir sinais sonoros, luminosos, etc.- O SENSOR DE GÁS MQ-135 tem capacidade de verificar a concentração de Gás Amônia e Álcool entre 10 ppm a 300 ppm, Gás Benzeno de 10ppm a 1000 ppm, demonstrando os dados junto a um display integrado ao Arduino.- Amplie as funções da sua plataforma de prototipagem, adquira o DETECTOR DE GÁS / SENSOR DE GÁS MQ-135 Amônia, Óxido Nítrico, Álcool, Benzeno, Dióxido de Carbono e Fumaça, e tenha certeza de estar adquirindo um produto que vai contribuir com a segurança da sua residência e ambiente de trabalho diante da presença de gases nocivos a saúde.
+</p>
+<ul>Especificações:</ul>
+<ul>- Detector de Gás;</ul>
+<ul>- Alta sensibilidade para detecção de Gás Amônia, Óxido Nítrico, Álcool, Benzeno, Dióxido de Carbono e Fumaça;</ul>
+<ul>- Emite sinais para a plataforma de prototipagem, que estará programada para atuar de determinado modo diante do ocorrido;</ul>
+<ul>- 4 furos para fixação;</ul>
+<ul>- Possui Trimpot para calibração do ponto de acionamento;</ul>
+<ul>- Detecção possível em concentrações de Gás Amônia e Álcool entre 10 ppm a 300 ppm;</ul>
+<ul>- Detecção possível em concentrações de Gás Benzeno entre 10ppm e 1000 ppm;</ul>
+<ul>- Longa vida útil e estabilidade confiável;</ul>
+<ul>- Resposta e de recuperação rápida;</ul>
+<ul>- Chip: LM393;</ul>
+<ul>- Sinal de Estimulação: Gás Amônia / Óxido Nítrico / Álcool / Benzeno / Dióxido de Carbono / Fumaça.</ul>
+
+
+<div class="card">
+    <h4 class="title">Log In!</h4>
+    <form>
+      <div class="field">
+        <svg class="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+        <input autocomplete="off" id="logemail" placeholder="Email" class="input-field" name="logemail" type="email">
+      </div>
+      <div class="field">
+        <svg class="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+        <input autocomplete="off" id="nome" placeholder="Nome" class="input-field" name="Nome" type="nome">
+      </div>
+      <div class="field">
+        <svg class="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+        <input autocomplete="off" id="cargo" placeholder="Cargo" class="input-field" name="Cargo" type="cargo">
+      </div>
+      <div class="field">
+        <svg class="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+        <input autocomplete="off" id="nom_empresa" placeholder="Nome da empresa" class="input-field" name="nom_empresa" type="nome de empresa">
+      </div>
+      <div class="field">
+        <svg class="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+        <input autocomplete="off" id="cidade" placeholder="Cidade" class="input-field" name="ciade" type="cidade">
+      </div>
+      <div class="field">
+        <svg class="input-icon" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+        <textarea class="form_input form_textarea" placeholder="" id="descricao" name="descricao"></textarea>
+      </div>
+      
+      <button class="btn" type="submit">Login</button>
+      <a href="#" class="btn-link">Forgot your password?</a>
+    </form>
+  </div>
+
+  <textarea class="form_input form_textarea" placeholder="" id="descricao" name="descricao"></textarea>
+  <input autocomplete="off" id="descricao" placeholder="Descrição" class="input-field" name="Descrição" type="descricao">
+
+  <div class="contato_heading">
+    <h1> Contato </h1>
+    <p> Alguma dúvida? Entre em contato conosco </p>
+</div>
+
+<div class="contato_group-content">
+    <form action="#" class="form">
+
+        <h4>Nome</h4>
+        <div class="form_group">
+            <input type="text" class="form_input" placeholder="" id="nome" name="nome">
+            <label for="nome" class="form_label"> </label>
+        </div>
+
+        <h4>Cargo</h4>
+        <div class="form_group">
+            <input type="text" class="form_input" placeholder="" id="cargo" name="cargo">
+            <label for="cargo" class="form_label"></label>
+        </div>
+
+        <h4>Nome da empresa</h4>
+        <div class="form_group">
+            <input type="text"class="form_input" id="empresa" name="empresa">
+            <label for="nome" class="form_label"></label>
+        </div>
+
+        <h4>Cidade</h4>
+        <div class="form_group">
+            <input type="text" class="form_input" id="Cidade" name="cidade">
+            <label for="name" class="form_label"></label>
+        </div>
+
+        <h4>Data de Agendamento</h4>
+        <div class="form_group">
+            <input type="datetime-local" class="form_input" placeholder="" id="Data" name="Data"> 
+            <label for="nome" class="form_label"></label>
+        </div>
+        <h4>E-mail</h4>
+        <div class="form_group">
+            <input type="email" class="form_input" placeholder="" id="email" name="email">
+            <label for="email" class="form_label">  </label>
+        </div>
+        <h4>Assunto</h4>
+        <div class="form_group">
+            <input type="text" class="form_input" placeholder="" id="assunto" name="assunto">
+            <label for="assunto" class="form_label">  </label>
+        </div>
+        <h4>Descrição</h4>
+        <div class="form_group">
+            <textarea class="form_input form_textarea" placeholder="" id="descricao" name="descricao"></textarea>
+            <label for="descricao" class="form_label"> Descrição </label>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Leia e aceite os <a href=""> termos de uso</a> e a política de privacidade.</label>
+          </div>
+
+        <div class="form_btn">
+            <button type="submit"  class="btn--orange btn--square"> Enviar </button>
+        </div>
+
+    </form>
+</div>
